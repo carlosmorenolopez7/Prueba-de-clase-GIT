@@ -1,0 +1,1 @@
+console.log(semana.map(dia=>dia.toUpperCase()))
