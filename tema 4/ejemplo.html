@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Random color example — event handler attribute</title>
+    <style>
+      button {
+        margin: 10px
+      };
+    </style>
+    <script>
+      window.onload = ()=>{
+      console.log("Se carga la pagina")
+      let tds = document.getElementsByTagName("td");
+      for(i=0;i<tds.length;i++)
+        tds[i].onclick = cambiaColor
+      let miH1 = document.getElementById("miTitulo");
+      const btn = document.querySelector('button');
+
+      function random(number) {
+        return Math.floor(Math.random() * (number+1));
+      }
+
+      function cambiaColor(e){
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        e.target.style.backgroundColor = rndCol;
+        console.log(e.target)
+      };
+      btn.addEventListener('click', cambiaColor);
+      //btn.addEventListener('click', ()=>{console.log("Otro codigo")});
+      miH1.onclick = cambiaColor;
+      //miH1.onclick = () => {console.log("Otro codigo")};
+      //miH1.addEventListener('click', ()=>(cambiaColor()));
+      }
+    </script>
+  </head>
+  <body>
+    <button>Change color</button>
+    <h1 id="miTitulo">TITULO</h1>
+    <table><tr><td>uno</td><td>dos</td></tr><tr><td>tres</td><td>cuatro</td></tr></table>
+  </body>
+</html>
