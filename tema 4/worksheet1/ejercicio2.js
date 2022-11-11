@@ -1,10 +1,10 @@
-function myFunction(e) {
+function coordenadas(e) {
   var x = e.clientX;
   var y = e.clientY;
-  var coor = "Coordinates: (" + x + "," + y + ")";
+  var coor = "Coordenadas: (" + x + "," + y + ")";
   document.getElementById("demo").innerHTML = coor;
 }
 
-function clearCoor() {
+function vaciar() {
   document.getElementById("demo").innerHTML = "";
 }
